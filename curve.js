@@ -9,6 +9,9 @@ function initCanvas() {
 	container.appendChild(canvas);
 
 	ctx = canvas.getContext("2d");
+
+	ctx.shadowBlur = 5;
+	ctx.shadowColor = "#000";
 }
 
 function getQueue(start, y, step, height, limit, fn) {
@@ -23,8 +26,8 @@ function getQueue(start, y, step, height, limit, fn) {
 	return queue;
 }
 
-function getColorQueue(limit) {
-	var frequency = .3;
+function getColorQueue(limit) { 
+	var frequency = Math.random();
 
 	var queue = [];
 
@@ -51,7 +54,6 @@ function renderCurve(queue, colorQueue, ctx, step) {
 
 	var x = 0;
 
-	ctx.strokeStyle = "#fff";
 
 	while ((y = queue.shift()) != undefined) {
 		x += step;
@@ -64,7 +66,7 @@ function renderCurve(queue, colorQueue, ctx, step) {
 		);
 		ctx.stroke();
 
-		ctx.fillStyle = colorQueue.shift();
+		ctx.fillStyle = ctx.strokeStyle = colorQueue.shift();
 
 		ctx.fillRect(
 			x - 4,
