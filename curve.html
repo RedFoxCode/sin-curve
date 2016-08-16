@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sin curve</title>
+</head>
+<body style="margin: 0; padding: 0; overflow: hidden; ">
+	<div class="control" style="position: absolute; top: 10px; left: 10px; background-color: rgba(30, 30, 30, 0.5); color: #fff; padding: 5px;">
+		Height <input type="" id="input_height" value="200" style="margin-top:5px;"><br>
+		Width <input type="" id="input_width" value="1" style="margin-top:5px;"><br>
+		Step <input type="" id="input_step" value="0.01" style="margin-top:5px;"><br>
+		Limit <input type="" id="input_limit" value="3000" style="margin-top:5px;"><br>
+		Function
+		<select selected=0 id="input_fn" style="margin-top:5px;">
+			<option>SIN</option>
+			<option>COS</option>
+			<option>TAN</option>
+			<option>LOG2</option>
+			<option>SQRT</option>
+			<option>ASIN</option>
+			<option>ACOS</option>
+			<option>ATAN</option>
+			<option>ASINH</option>
+			<option>ACOSH</option>
+			<option>ATANH</option>
+			<option>Round</option>
+			<option>Random</option>
+		</select>
+		<br>
+		<button onclick="newCurve();" style="margin-top:5px;">Render</button>
+	</div>
+	<div class="container"></div>
+</body>
+<script type="text/javascript" src="curve.js"></script>
+</html>
